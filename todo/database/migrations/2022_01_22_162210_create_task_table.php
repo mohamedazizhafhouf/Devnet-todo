@@ -15,11 +15,10 @@ class CreateTaskTable extends Migration
     {
         
         Schema::create('task', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->id('idTask');
             $table->string('desc');
-            $table->string('status');
-            $table->foreignId('idTodo')->references('idTodo')->on('todo');
+            $table->string('is_complete');
+            $table->foreignId('idUser')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
