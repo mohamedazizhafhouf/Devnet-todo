@@ -54,10 +54,5 @@
         </script>
     </div>
 
-    <div class="fdata">
-        <div class="showTask">
-
-        </div>
-    </div>
-    
+   
 </div>
