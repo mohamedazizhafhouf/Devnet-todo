@@ -56,7 +56,9 @@
 
     <div class="fdata">
         <div class="showTask">
-
+            @foreach ($tasks as $task)
+                {{$task->desc}}<br/>
+            @endforeach
         </div>
     </div>
     

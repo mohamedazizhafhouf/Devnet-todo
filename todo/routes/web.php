@@ -22,7 +22,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::post('/dashboard',[LaravelCrud::class,'add']);
+Route::get('/dashboard',[LaravelCrud::class,'getIndex']);
+
 Route::post('/add',[LaravelCrud::class,'add']);
 Route::post('/get',[LaravelCrud::class,'get']);
 

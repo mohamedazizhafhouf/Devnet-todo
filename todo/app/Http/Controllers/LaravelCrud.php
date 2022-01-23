@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 
 class LaravelCrud extends Controller
@@ -39,7 +40,11 @@ class LaravelCrud extends Controller
         
     }
 
-    function get(){
-        
+    function getIndex(){
+        $tasks = Auth::user()->tasks;
+        return View::make('dashboard', array(
+            'tasks' => $tasks
+        ));
+
     }
 }
