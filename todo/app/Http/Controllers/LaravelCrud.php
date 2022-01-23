@@ -40,6 +40,16 @@ class LaravelCrud extends Controller
     }
 
     function get(){
-        
+        $id=Auth::user()->id;
+        //get all the tasks of the logged in user 
+        /*$tasks = DB::table('task')
+            ->select(DB::raw('desc'))
+            ->where('idUser','=',$id)
+            ->get();*/
+
+        $tasks = DB::table('task')
+            ->where('idUser',$id)
+            ->get();
+        return view("dashboard",compact("tasks"));
     }
 }

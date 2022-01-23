@@ -10,6 +10,19 @@
 .formbox{
     border:2px solid red;
 }
+
+.task{
+    border: 2px solid green;
+    width:100%;
+}
+.taskgroup{
+    border: 2px solid blue;
+}
+
+.list{
+    border: 2px solid purple;
+    width:60%;
+}
 </style>
 <div class="mt-4 container">
 
@@ -52,6 +65,24 @@
             }, false);
             })();
         </script>
+    </div>
+
+    <div class="taskgroup d-flex justify-content-center">
+        <div class="list  ">
+        @foreach($tasks as $task)
+            <div class="task mt-4 d-flex justify-content-center">
+                <div class="input-group">
+                        <input type="text" value="{{$task->desc}}" class="form-control" aria-label="Text input with checkbox">
+                            <div class="input-group-prepend">
+                                <div  class="input-group-text">
+                                    <input type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                            </div>
+                </div>
+                        <button type="button" class="btn btn-outline-danger"><i class="fas fa-minus-square"></i></button>
+
+        </div>
+        @endforeach
     </div>
 
    
