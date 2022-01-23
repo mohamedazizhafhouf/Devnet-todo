@@ -59,7 +59,15 @@ class LaravelCrud extends Controller
         return redirect('dashboard');
     }
 
-    function update(Request $request){
-       
+    function update(Request $request,$id){
+        $this->validate($request,[
+            'gtask'=>'required'
+        ]);
+        //return $request->input();
+        $new = $request->input('gtask');
+        DB::update('update task set `desc` = ? where `idTask` = ?',[$new, $id]);
+           
+        return redirect('dashboard');
+
     }
 }

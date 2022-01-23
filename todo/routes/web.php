@@ -23,7 +23,7 @@ Route::get('/dashboard', [LaravelCrud::class,'get'])->middleware(['auth'])->name
 Route::post('/dashboard',[LaravelCrud::class,'add']);
 Route::post('/add',[LaravelCrud::class,'add']);
 Route::get('/delete/{id}',[LaravelCrud::class,'delete']);
-Route::post('/update',[LaravelCrud::class,'update']);
+Route::post('/update/{id}',[LaravelCrud::class,'update']);
 
 
 require __DIR__.'/auth.php';
