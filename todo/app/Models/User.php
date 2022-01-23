@@ -41,11 +41,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-<<<<<<< HEAD
-
-    public function tasks(){
-        return $this->hasMany('task','idUser');
-    }
-=======
->>>>>>> parent of 3a326b2 (add task done)
 }

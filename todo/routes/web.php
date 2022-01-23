@@ -21,12 +21,4 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-<<<<<<< HEAD
-Route::get('/dashboard',[LaravelCrud::class,'getIndex']);
-
-Route::post('/add',[LaravelCrud::class,'add']);
-Route::post('/get',[LaravelCrud::class,'get']);
-
-=======
->>>>>>> parent of 3a326b2 (add task done)
 require __DIR__.'/auth.php';
