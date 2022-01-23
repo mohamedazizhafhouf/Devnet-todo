@@ -52,4 +52,14 @@ class LaravelCrud extends Controller
             ->get();
         return view("dashboard",compact("tasks"));
     }
+
+    function delete($id){
+        //$query = DB::table('task')->where('idTask','=',$id)->delete();
+        $query = DB::delete('delete from task where idTask = ?',[$id]);
+        return redirect('dashboard');
+    }
+
+    function update(Request $request){
+       
+    }
 }

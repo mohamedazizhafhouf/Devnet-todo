@@ -1,27 +1,25 @@
 <style>
    
 .container{
-    border:2px solid black;
 }
 
 .addField{
     width:50%;
 }
 .formbox{
-    border:2px solid red;
 }
 
 .task{
-    border: 2px solid green;
     width:100%;
 }
 .taskgroup{
-    border: 2px solid blue;
 }
 
 .list{
-    border: 2px solid purple;
     width:60%;
+}
+.check{
+    height:100%;
 }
 </style>
 <div class="mt-4 container">
@@ -74,13 +72,16 @@
                 <div class="input-group">
                         <input type="text" value="{{$task->desc}}" class="form-control" aria-label="Text input with checkbox">
                             <div class="input-group-prepend">
-                                <div  class="input-group-text">
+                                <div  class="check input-group-text">
                                     <input type="checkbox" aria-label="Checkbox for following text input">
                                 </div>
                             </div>
                 </div>
-                        <button type="button" class="btn btn-outline-danger"><i class="fas fa-minus-square"></i></button>
 
+                        <a href="delete/{{$task->idTask}}">
+                        <button type="button" class="ml-2 btn btn-outline-danger"><i class="fas fa-minus-square"></i></button>
+                        </a>
+                            
         </div>
         @endforeach
     </div>
