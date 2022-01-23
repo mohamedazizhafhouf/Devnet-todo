@@ -10,7 +10,6 @@
 }
 
 .task{
-    border: 2px solid blue;
     width:100%;
     
 }
@@ -19,7 +18,6 @@
 }
 }
 .taskgroup{
-    border: 2px solid red;
 }
 
 .list{
@@ -65,7 +63,7 @@
                                  
                 </div>
                         <div class="butt">
-                        <button type="submit" class="ml-2 btn btn-outline-primary"><i class="fas fa-plus-square"></i></button>
+                        <button type="submit" class="ml-2 btn btn-outline-primary">Save</button>
 
                         </div>
 
