@@ -57,15 +57,6 @@
                             <button type="button" class="btn btn-outline-primary"><i class="fas fa-plus-square"></i></button>
                             <button style="width10%;" type="button" class="btn btn-outline-danger"><i class="fas fa-minus-square"></i></button>
 
-<<<<<<< HEAD
-    <div class="fdata">
-        <div class="showTask">
-            @foreach ($tasks as $task)
-                {{$task->desc}}<br/>
-            @endforeach
-=======
-                </div>
->>>>>>> parent of 3a326b2 (add task done)
         </div>
     </div>
     
