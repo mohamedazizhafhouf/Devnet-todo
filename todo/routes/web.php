@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LaravelCrud;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::post('/dashboard',[LaravelCrud::class,'add']);
+Route::post('/add',[LaravelCrud::class,'add']);
+Route::post('/get',[LaravelCrud::class,'get']);
 
 require __DIR__.'/auth.php';
