@@ -4,7 +4,6 @@
 
 <style>
 .home{
-    margin-top: 4vh;
 }
 .but{
     width:100%;

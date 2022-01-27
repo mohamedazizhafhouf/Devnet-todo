@@ -29,7 +29,7 @@
           
 
             <!-- Page Content -->
-            <main>
+            <main class="mt-5">
             <div class="cont">
                 @yield('content')
                 </div>
