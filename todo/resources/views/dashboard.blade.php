@@ -2,6 +2,6 @@
     <x-slot name="header">
     </x-slot>
 
-    @include('todo')
+    @include('home')
 
 </x-app-layout>
