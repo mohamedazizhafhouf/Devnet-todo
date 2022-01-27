@@ -1,6 +1,10 @@
+@extends('layouts.app')
+
+@section('content')
+
 <style>
 .home{
-    border:2px solid green;
+    margin-top: 4vh;
 }
 .but{
     width:100%;
@@ -10,7 +14,7 @@
     width:100%;
     background-color: #C0392B;
 }
-.bt:hover{
+.bt:hover, .bt:focus{
     background-color: #145369;
 }
 .buttons{
@@ -21,10 +25,15 @@
 <div class="home container d-flex justify-content-center">
     <div class="buttons">
         <div class="but">
+            <a href="projects">
             <button type="button" class="bt btn btn-primary btn-lg btn-block">Projects</button>
+            </a>
         </div>
         <div class="but">
-            <button type="button" class="bt btn btn-primary btn-lg btn-block">Users</button>
+        <a href="">
+            <button href="/test" type="button" class="bt btn btn-primary btn-lg btn-block">Users</button>
+            </a>
         </div>
     </div>
 </div>
+@endsection;
