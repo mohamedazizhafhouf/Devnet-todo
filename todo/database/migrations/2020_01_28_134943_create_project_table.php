@@ -17,7 +17,9 @@ class CreateProjectTable extends Migration
             $table->id('idProject');
             $table->String('name');
             $table->String('description');
-            $table->String('status')->default('todo');        
+            $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->String('status')->default('todo'); 
+            $table->timestamps();       
         });
     }
 

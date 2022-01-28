@@ -16,7 +16,7 @@ class CreateUserTask extends Migration
         Schema::create('user_task', function (Blueprint $table) {
             $table->id();
             $table->foreignId('idUser')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('idProject')->references('idProject')->on('project')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('idTask')->references('idTask')->on('task')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
