@@ -61,7 +61,7 @@ class projectController extends Controller
         return $this->addProject($request,$id);
     }
 
-    function main(){
+    /*function main(){
         $id = Auth::user()->id;
         $projects = DB::table('project')
             ->join('user_project','project.idProject',"=","user_project.idProject")
@@ -70,7 +70,7 @@ class projectController extends Controller
             ->where('users.id',"=",$id)
             ->get();
         
-        return $projects;
+        return $projects;*/
 
     }
 
