@@ -14,7 +14,10 @@
     width:100%;
 }
 .butt .btn{
-    width:60%;
+    width:100%;
+}
+.addButton{
+    width:50%;
 }
 .display-projects{
     border:2px solid red;
@@ -37,9 +40,13 @@
 
 <div class="projects container ">
     <h1 class="title text-center">Projects</h1>
-    <div class="add-project mt-4">
-                <div class="butt d-flex justify-content-center">
-                    <button class="btn btn-success btn-lg btn-block">Add New Project</button>
+    <div class="add-project mt-4 d-flex justify-content-center">
+                <div class="addButton ">
+                    <div class="butt">
+                        <a href="/projects/new">
+                        <button class="btn btn-success btn-lg btn-block">Add New Project</button>
+                        </a>
+                    </div>
                 </div>
     </div>
     <div class="display-projects mt-4">
@@ -70,7 +77,12 @@
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                <div class="project-list">
+                                        <div class="proj d-flex justify-content-center">
+                                            <h5 class="">Project Name</h5>
+                                            <button type="button" class="btn btn-outline-primary">Edit</button>
+                                        </div>
+                                    </div>
                                 </div>
                                 </div>
                             </div>
@@ -82,7 +94,12 @@
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                <div class="project-list">
+                                        <div class="proj d-flex justify-content-center">
+                                            <h5 class="">Project Name</h5>
+                                            <button type="button" class="btn btn-outline-primary">Edit</button>
+                                        </div>
+                                    </div>
                                 </div>
                                 </div>
                             </div>
