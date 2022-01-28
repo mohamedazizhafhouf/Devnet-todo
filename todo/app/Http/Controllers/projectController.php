@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+
 
 use Illuminate\Http\Request;
 
@@ -54,5 +56,10 @@ class projectController extends Controller
     function add(Request $request){
         $id = Auth::user()->id;
         return $this->addProject($request,$id);
+    }
+
+    function main(){
+        $user = User::find(1);
+        return $user->projects;
     }
 }

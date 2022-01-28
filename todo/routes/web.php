@@ -33,5 +33,8 @@ Route::post('/add',[LaravelCrud::class,'add']);
 Route::get('/delete/{id}',[LaravelCrud::class,'delete']);
 Route::post('/update/{id}',[LaravelCrud::class,'update']);
 
+//test
+Route::get('/pro',[projectController::class,'main']);
+
 
 require __DIR__.'/auth.php';

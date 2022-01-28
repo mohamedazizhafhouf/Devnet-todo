@@ -42,5 +42,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function projects(){
+        return $this->belongsToMany(project::class,'user_project','idUser','idProject','id','idProject');//write id name if they are different
+    }
+
     
 }
