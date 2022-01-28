@@ -8,6 +8,12 @@
     .inputForm{
         border: 2px solid black;
     }
+    .addField{
+    width:50%;
+    }
+    form .btn{
+        width:50%;
+    }
 </style>
 
 <div class="main-cont container">
@@ -15,15 +21,27 @@
         <div class="h1 text-center">Add new Project</div>
     </div>
     <div class="inputForm">
-            <form class="needs-validation" action="new" method="post" novalidate>
+            <form class="needs-validation" action="add" method="post" novalidate>
                 @csrf 
                 <div class="f d-flex justify-content-center">
                     <div class="addField form-group mx-sm-3 mb-2">
-                        <input type="text" class="form-control" id="validationCustom01" name="task" placeholder="Add new task" required>
-                    </div>
-                    <div class="butt">
+                        <label for="validationCustom01">Project name</label>
+                        <input type="text" class="form-control" id="validationCustom01" name="projectName" placeholder="Project name" required>
+                    </div> 
+                </div>
+                <div class="f d-flex justify-content-center">
+                    <div class="addField form-group mx-sm-3 mb-2">
+                        <label for="validationCustom02">Description</label>
+                        <textarea class="form-control" id="validationCustom02" name="description" placeholder="Write your description here" required></textarea>
+                    </div> 
+                </div>
+                <div class="f d-flex justify-content-center">
+                    <div class="addField form-group mx-sm-3 mb-2">
+        
+                    </div> 
+                </div>
+                <div class="butt text-center">
                     <button type="submit" class="btn btn-success mb-2">Add</button>
-                    </div>
                 </div>
             
         </form>
