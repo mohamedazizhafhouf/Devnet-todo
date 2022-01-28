@@ -70,9 +70,9 @@ class projectController extends Controller
             ->where('users.id',"=",$id)
             ->get();
         
-        return $projects;*/
+        return $projects;
 
-    }
+    }*/
 
     function get(){
         $id = Auth::user()->id;
