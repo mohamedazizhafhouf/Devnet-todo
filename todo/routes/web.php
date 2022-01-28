@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LaravelCrud;
 use App\Http\Controllers\dashboard_controller;
+use App\Http\Controllers\projectController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,7 @@ Route::get('/dashboard',function(){
     return view('home');
 })->middleware(['auth'])->name('dashboard');
 Route::get('/projects',[dashboard_controller::class,'main']);
+Route::get('/projects/new',[projectController::class,'new']);
 
 Route::post('/dashboard',[LaravelCrud::class,'add']);
 Route::post('/add',[LaravelCrud::class,'add']);
