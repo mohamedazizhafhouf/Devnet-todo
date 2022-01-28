@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LaravelCrud;
 use App\Http\Controllers\dashboard_controller;
 use App\Http\Controllers\projectController;
+use App\Http\Controllers\editProjectController;
+
 
 
 /*
@@ -30,10 +32,13 @@ Route::get('/projects',[projectController::class,'get']);
 Route::get('/projects/new',[projectController::class,'new']);
 Route::post('/projects/add',[projectController::class,'add']);
 
-Route::post('/dashboard',[LaravelCrud::class,'add']);
+//show and edit each project 
+Route::get('/projects/edit/{id}',[editProjectController::class,'get']);
+
+/*Route::post('/dashboard',[LaravelCrud::class,'add']);
 Route::post('/add',[LaravelCrud::class,'add']);
 Route::get('/delete/{id}',[LaravelCrud::class,'delete']);
-Route::post('/update/{id}',[LaravelCrud::class,'update']);
+Route::post('/update/{id}',[LaravelCrud::class,'update']);*/
 
 //test
 Route::get('/pro',[projectController::class,'main']);
