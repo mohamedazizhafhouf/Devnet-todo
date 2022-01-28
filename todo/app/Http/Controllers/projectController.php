@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\project;
+
 
 
 use Illuminate\Http\Request;
@@ -44,10 +46,11 @@ class projectController extends Controller
 
     function addUserProject($request,$id,$created_at){
         //userProject table
-        $idProject = DB::table('project')->latest()->first();
+        $last = DB::table('project')->latest()->first()->idProject;
+
         $query = DB::table('user_project')->insert([
             'idUser'=>$id,
-            'idProject'=> $idProject,
+            'idProject'=> $last,
             'created_at'=>$created_at,
         ]);
         return view('projects');
@@ -59,7 +62,9 @@ class projectController extends Controller
     }
 
     function main(){
-        $user = User::find(1);
-        return $user->projects;
+        $last = DB::table('project')->latest()->first();
+        
+        return $last->idProject;
+
     }
 }
