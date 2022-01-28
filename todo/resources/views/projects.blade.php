@@ -3,11 +3,8 @@
 
 <style>
 
-.projects{
+.main-cont{
     border: 2px solid green;
-}
-.title{
-    color:#C0392B;
 }
 
 .add-project{
@@ -38,7 +35,7 @@
 }
 </style>
 
-<div class="projects container ">
+<div class="main-cont container ">
     <h1 class="title text-center">Projects</h1>
     <div class="add-project mt-4 d-flex justify-content-center">
                 <div class="addButton ">

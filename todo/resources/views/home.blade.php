@@ -24,7 +24,7 @@
 <div class="home container d-flex justify-content-center">
     <div class="buttons">
         <div class="but">
-            <a href="projects">
+            <a href="/projects">
             <button type="button" class="bt btn btn-primary btn-lg btn-block">Projects</button>
             </a>
         </div>
