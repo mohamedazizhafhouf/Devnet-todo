@@ -62,9 +62,26 @@ class projectController extends Controller
     }
 
     function main(){
-        $last = DB::table('project')->latest()->first();
+        $id = Auth::user()->id;
+        $projects = DB::table('project')
+            ->join('user_project','project.idProject',"=","user_project.idProject")
+            ->join('users','user_project.idUser',"=","users.id")
+            ->select('project.*')
+            ->where('users.id',"=",$id)
+            ->get();
         
-        return $last->idProject;
+        return $projects;
 
     }
+
+    function get(){
+        $id = Auth::user()->id;
+        $projects = DB::table('project')
+            ->join('user_project','project.idProject',"=","user_project.idProject")
+            ->join('users','user_project.idUser',"=","users.id")
+            ->select('project.*')
+            ->where('users.id',"=",$id)
+            ->get();
+        return view("/projects",compact("projects"));
+        }
 }

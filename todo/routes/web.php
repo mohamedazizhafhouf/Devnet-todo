@@ -24,7 +24,9 @@ Route::get('/', function () {
 Route::get('/dashboard',function(){
     return view('home');
 })->middleware(['auth'])->name('dashboard');
-Route::get('/projects',[dashboard_controller::class,'main']);
+
+//Route::get('/projects',[dashboard_controller::class,'main']);
+Route::get('/projects',[projectController::class,'get']);
 Route::get('/projects/new',[projectController::class,'new']);
 Route::post('/projects/add',[projectController::class,'add']);
 

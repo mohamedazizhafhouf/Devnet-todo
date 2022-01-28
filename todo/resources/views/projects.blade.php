@@ -4,7 +4,6 @@
 <style>
 
 .main-cont{
-    border: 2px solid green;
 }
 
 .add-project{
@@ -17,16 +16,12 @@
     width:50%;
 }
 .display-projects{
-    border:2px solid red;
 }
 .todo{
-    border: 2px solid black;
 }
 .project-list{
-    border: 2px solid black;
 }
 .proj{
-    border:2px solid red;
 }
 .proj h5{
     margin-right: 4vh;
@@ -52,34 +47,55 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    On going
+                                    To do
                                 </button>
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <div class="project-list">
-                                        <div class="proj d-flex justify-content-center">
-                                            <h5 class="">Project Name</h5>
-                                            <button type="button" class="btn btn-outline-primary">Edit</button>
+                                    <div class="accordion-body">
+                                        <div class="project-list mt-2">
+
+                                                @foreach($projects as $project)
+                                                    @if($project->status == 'todo')
+                                                        <form action="edit/{{$project->idProject}}" method="">
+                                                        @csrf 
+                                                        <div class="proj">
+                                                            <div class="pro d-flex justify-content-center mb-4">
+                                                                <h5 class="">{{$project->name}}</h5>
+                                                                <button type="submit" class="btn btn-outline-primary">Edit</button>
+                                                            </div> 
+                                                        </div>   
+                                                    </form>
+                                                    @endif
+                                                @endforeach
+
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    To do
+                                    On going
                                 </button>
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                 <div class="project-list">
-                                        <div class="proj d-flex justify-content-center">
-                                            <h5 class="">Project Name</h5>
-                                            <button type="button" class="btn btn-outline-primary">Edit</button>
-                                        </div>
-                                    </div>
+                                                @foreach($projects as $project)
+                                                    @if($project->status == 'ongoing')
+                                                    <form action="edit/{{$project->idProject}}" method="">
+                                                        @csrf 
+                                                        <div class="proj">
+                                                            <div class="pro d-flex justify-content-center mb-4">
+                                                                <h5 class="">{{$project->name}}</h5>
+                                                                <button type="submit" class="btn btn-outline-primary">Edit</button>
+                                                            </div>  
+                                                        </div>
+                                                    </form>
+                                                    @endif
+                                                @endforeach
+                                </div>
                                 </div>
                                 </div>
                             </div>
@@ -92,10 +108,19 @@
                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                 <div class="project-list">
-                                        <div class="proj d-flex justify-content-center">
-                                            <h5 class="">Project Name</h5>
-                                            <button type="button" class="btn btn-outline-primary">Edit</button>
-                                        </div>
+                                                @foreach($projects as $project)
+                                                    @if($project->status == 'completed')
+                                                    <form action="edit/{{$project->idProject}}" method="">
+                                                        @csrf 
+                                                        <div class="proj">
+                                                            <div class="pro d-flex justify-content-center mb-4">
+                                                                <h5 class="">{{$project->name}}</h5>
+                                                                <button type="submit" class="btn btn-outline-primary">Edit</button>
+                                                            </div>  
+                                                        </div>
+                                                    </form>
+                                                    @endif
+                                                @endforeach
                                     </div>
                                 </div>
                                 </div>
