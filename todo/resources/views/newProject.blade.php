@@ -3,10 +3,8 @@
 @section('content')
 <style>
     .main-cont{
-        border:2px solid green;
     }
     .inputForm{
-        border: 2px solid black;
     }
     .addField{
     width:50%;
@@ -41,7 +39,7 @@
                     </div> 
                 </div>
                 <div class="butt text-center">
-                    <button type="submit" class="btn btn-success mb-2">Add</button>
+                    <button type="submit" class="btn btn-success mb-2 mt-2">Add</button>
                 </div>
             
         </form>
