@@ -26,21 +26,32 @@
 
     <div class="details d-flex justify-content-center">
         <div class="fields">
-            <form class="needs-validation" action="" method="post" novalidate>
+            <form class="needs-validation" action="/projects/{{$details->idProject}}/edit/update-project" method="post" novalidate>
                 <div class="field">
                     <label for="validationCustom01">Name</label>
-                    <input type="text" value="value here" class="form-control" id="validationCustom01" name="projectName" required>
+                    <input type="text" value="{{$details->name}}" class="form-control" id="validationCustom01" name="projectName" required>
                 </div>
                 <div class="field">
                     <label for="validationCustom02">Name</label>
-                    <textarea class="form-control" id="validationCustom02" required>desc value here</textarea>                
+                    <textarea class="form-control" id="validationCustom02" required>{{$details->description}}</textarea>                
                 </div>
                 <div class="field">
-                    {{
-                      $selected1="",
-                      $selected2="",
-                      $selected3="",
-                    }}
+                    @php
+                        $selected=$details->status;
+                        $selected1="";
+                        $selected2="";
+                        $selected3="";
+                        if ($selected=="todo"){
+                            $selected1="selected";
+                        }
+                        else if ($selected=="ongoing"){
+                            $selected2="selected";
+                        }
+                        else{
+                            $selected3="selected";
+                        }
+                    
+                    @endphp
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Status</label>
                         <select class="form-control" id="exampleFormControlSelect1">
@@ -50,10 +61,8 @@
                         </select>
                     </div>
                 </div>
-                <div class="updateButton text-center mt-4 d-grid gap-2">
-                    <a href="">
+                <div class="updateButton mt-4 d-grid gap-2 d-flex justify-content-center">
                         <button type="submit" class="ml-2 btn btn-primary">Update</button>
-                    </a>
                 </div>
             </form>
         </div>

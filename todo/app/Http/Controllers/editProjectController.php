@@ -14,7 +14,7 @@ class editProjectController extends Controller
         $projectDetails= DB::table('project')
         ->where('idProject',$id)
         ->get();
-        return $projectDetails;
+        return $projectDetails[0];
     }
 
     function getListMembers($id){
@@ -42,6 +42,11 @@ class editProjectController extends Controller
         $details=$this->getProjectDetails($id);
         $listMembers=$this->getListMembers($id);
         $listNotMembers=$this->getListNotMembers($id);
-        //return view('editProject');
+        return view('editProject',compact("details"));
+    }
+
+    function update(Request $request,$id){
+        $hello="test";
+        return $hello;
     }
 }
