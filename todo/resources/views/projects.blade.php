@@ -56,7 +56,7 @@
 
                                                 @foreach($projects as $project)
                                                     @if($project->status == 'todo')
-                                                        <form action="projects/edit/{{$project->idProject}}" method="">
+                                                        <form action="projects/{{$project->idProject}}/edit" method="">
                                                         @csrf 
                                                         <div class="proj">
                                                             <div class="pro d-flex justify-content-center mb-4">
@@ -84,7 +84,7 @@
                                 <div class="project-list">
                                                 @foreach($projects as $project)
                                                     @if($project->status == 'ongoing')
-                                                    <form action="projects/edit/{{$project->idProject}}" method="">
+                                                    <form action="projects/{{$project->idProject}}/edit" method="">
                                                         @csrf 
                                                         <div class="proj">
                                                             <div class="pro d-flex justify-content-center mb-4">
@@ -110,7 +110,7 @@
                                 <div class="project-list">
                                                 @foreach($projects as $project)
                                                     @if($project->status == 'completed')
-                                                    <form action="projects/edit/{{$project->idProject}}" method="">
+                                                    <form action="projects/{{$project->idProject}}/edit" method="">
                                                         @csrf 
                                                         <div class="proj">
                                                             <div class="pro d-flex justify-content-center mb-4">
