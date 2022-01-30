@@ -3,10 +3,8 @@
 @section('content')
 <style>
     .editProject{
-        border:2px solid red;
     }
     .details{
-        border:2px solid green;
         width:100%;
     }
     .field{
@@ -17,6 +15,9 @@
     }
     .updateButton button{
         width:40%;
+    }
+    .info-message{
+        width:70%;
     }
 </style>
 <div class="editProject container">
@@ -67,7 +68,27 @@
                 </div>
             </form>
         </div>
+                
     </div>
+
+    <div class="info d-flex justify-content-center mt-4">
+       <div class="info-message">
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success alert-dismissible alert-block fade show" role="alert">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert">×</button>    
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @endif
+            
+                    @if ($message = Session::get('error'))
+                        <div class="alert alert-danger alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>    
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @endif
+        </div> 
+    </div>
+    
 
     <script>
             // Example starter JavaScript for disabling form submissions if there are invalid fields

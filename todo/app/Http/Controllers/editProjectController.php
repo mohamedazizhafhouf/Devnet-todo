@@ -50,8 +50,12 @@ class editProjectController extends Controller
         $description=$request->input('description');
         $status=$request->input('status');
         $updated_at = \Carbon\Carbon::now()->toDateTimeString();
-        DB::update('update project set `name` = ?, `description` = ?, `status` = ?, `updated_at` = ?  where `idProject` = ?',
+        $query = DB::update('update project set `name` = ?, `description` = ?, `status` = ?, `updated_at` = ?  where `idProject` = ?',
         [$name, $description, $status, $updated_at, $id]);
+
+        if($query){
+            back()->with('success','Project updated successfully');
+        }
 
         return redirect('/projects/'.$id.'/edit');
         }
