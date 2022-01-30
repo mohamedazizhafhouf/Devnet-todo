@@ -35,6 +35,7 @@ Route::post('/projects/add',[projectController::class,'add']);
 //show and edit each project 
 Route::get('/projects/{id}/edit',[editProjectController::class,'get']);
 Route::post('/projects/{id}/edit/update',[editProjectController::class,'update']);
+Route::get('/projects/{id}/edit/delete',[editProjectController::class,'delete']);
 
 
 /*Route::post('/dashboard',[LaravelCrud::class,'add']);

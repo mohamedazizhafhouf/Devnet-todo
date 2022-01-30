@@ -59,4 +59,9 @@ class editProjectController extends Controller
 
         return redirect('/projects/'.$id.'/edit');
         }
+
+    function delete($id){
+        $query = DB::delete('delete from project where idProject = ?',[$id]);
+        return redirect('/projects');
+    }
 }
