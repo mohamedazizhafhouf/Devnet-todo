@@ -8,7 +8,12 @@ class editProjectController extends Controller
 {
     //
 
-    function get(){
-        return view('editProject');
+    /*function getProjectDetails($id){
+        $query=
+    }*/
+
+    function get($id){
+        //$details=getProjectDetails($id);
+        //return view('editProject');
     }
 }

@@ -26,14 +26,14 @@
 
     <div class="details d-flex justify-content-center">
         <div class="fields">
-            <form action="" method="post">
+            <form class="needs-validation" action="" method="post" novalidate>
                 <div class="field">
                     <label for="validationCustom01">Name</label>
                     <input type="text" value="value here" class="form-control" id="validationCustom01" name="projectName" required>
                 </div>
                 <div class="field">
                     <label for="validationCustom02">Name</label>
-                    <textarea class="form-control" id="validationCustom02">desc value here</textarea>                
+                    <textarea class="form-control" id="validationCustom02" required>desc value here</textarea>                
                 </div>
                 <div class="field">
                     {{
@@ -52,7 +52,7 @@
                 </div>
                 <div class="updateButton text-center mt-4 d-grid gap-2">
                     <a href="">
-                        <button type="button" class="ml-2 btn btn-primary">Update</button>
+                        <button type="submit" class="ml-2 btn btn-primary">Update</button>
                     </a>
                 </div>
             </form>
