@@ -46,7 +46,6 @@ class editProjectController extends Controller
     }
 
     function update(Request $request,$id){
-        $hello="test";
-        return $hello;
+        
     }
 }
