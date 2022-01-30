@@ -13,16 +13,24 @@
     .fields{
         width:50%;
     }
-    .updateButton button{
+    .but button{
         width:40%;
     }
+
+    .deleteButton a{
+        width:40%;
+    }
+    a .db {
+        width:100%;
+    }
+
     .info-message{
         width:70%;
     }
 </style>
 <div class="editProject container">
     <div class="title text-center">
-        <h1>Project name</h1>
+        <h1>{{$details->name}}</h1>
     </div>
 
     <div class="details d-flex justify-content-center">
@@ -63,8 +71,15 @@
                         </select>
                     </div>
                 </div>
-                <div class="updateButton mt-4 d-grid gap-2 d-flex justify-content-center">
-                        <button type="submit" class="ml-2 btn btn-primary">Update</button>
+                <div class="buttons">
+                    <div class="but mt-4 d-grid gap-2 d-flex justify-content-center">
+                            <button type="submit" class="ml-2 btn btn-primary">Update</button>
+                    </div>
+                    <div class="deleteButton mt-4 d-grid gap-2 d-flex justify-content-center">
+                        <a href="/projects/{{$details->idProject}}/edit/delete">
+                            <button type="button" class="btn btn-danger db">Delete</button>
+                        </a>
+                    </div>
                 </div>
             </form>
         </div>
