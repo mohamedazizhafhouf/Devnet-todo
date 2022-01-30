@@ -53,7 +53,7 @@ class projectController extends Controller
             'idProject'=> $last,
             'created_at'=>$created_at,
         ]);
-        return $this->get();
+        return redirect('projects');
     }
 
     function add(Request $request){
